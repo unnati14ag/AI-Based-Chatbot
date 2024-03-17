@@ -6,10 +6,10 @@ SecureCloud Solutions presents a robust cloud security management project aimed 
 
 ## 💻 Technology Stack
 
-- **Project Type:** Web Application
+- **Project Type:** Web Application (AI-Based-Chatbot)
 - **Development Environment:** Visual Studio Code
 - **Programming Languages:** Python, Flask, HTML, CSS, JavaScript
-- **Database:** MongoDB
+- **Database:** 
 - **Cloud Provider:** Amazon Web Services (AWS)
 
 ## 🌟 Key AWS Services Utilized
@@ -41,7 +41,7 @@ To implement a secure cloud environment, the following AWS services have been le
 
 ## 🌐 Web Application: Authentication Module
 
-The web application developed as part of this project includes an authentication module featuring a login page. Users can securely enter their credentials, which are stored in a MongoDB database. This demonstrates how cloud security principles are implemented in real-world applications.
+The web application developed as part of this project includes an authentication module featuring a login page. Users can securely enter their credentials, which are stored in a database. This demonstrates how cloud security principles are implemented in real-world applications.
 
 ## 🌟 Conclusion
 
