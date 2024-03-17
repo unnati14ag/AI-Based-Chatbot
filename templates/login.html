@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- YOUR CSS -->
+    <link rel="stylesheet" href="../static/LoginPage/css/responsive-style.css" />
+    <link rel="stylesheet" href="../static/LoginPage/css/style.css" />
+  </head>
+  <body>
+    <form method="POST">
+    <!-- header design -->
+    <header>
+      <nav class="navbar navbar-expand-lg navigation-wrap">
+        <div class="container">
+          <a class="navbar-brand" href="/"
+            ><img class="logoimg" src="../static/WelcomePage/img/logo.png" alt="Your Logo"
+          /></a>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href=""
+                  >New User?</a
+                >
+              </li>
+              <li>
+                <button
+                  class="main-btn"
+                  id="signup-btn"
+                >
+                  SignUp <i class="fas fa-arrow-right"></i>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Login section -->
+    <section id="home">
+        <div class="container-fluid px-0 top-banner">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-5 col-md-6">
+                <h1>Welcome Back !</h1>
+                <p>Login to continue </p>
+                <div class="logininput">
+                    <i class="fa fa-user icon"></i> <input type="text" name="username" placeholder="Enter username" required><br><br>
+                    <i class="fa fa-lock icon"></i> <input type="password" name="password" id="" placeholder="Enter password" required>
+                </div>
+                <div class="mt-4">
+                  <button class="main-btn" type="submit">
+                    Login <i class="fas fa-arrow-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+    <!-- own js -->
+    <script src="../static/WelcomePage/js/main.js"></script>
+  </form>
+  </body>
+</html>

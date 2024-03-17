@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College Admission Chatbot</title>
+    <!-- Bootstrap CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- YOUR CSS -->
+    <link
+      rel="stylesheet"
+      href="../static/LoginPage/css/responsive-style.css"
+    />
+    <link rel="stylesheet" href="../static/ChatBot/style1.css" />
+    <style>
+      body {
+        background-image: url("../static/ChatBot/ChatBotpic.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .chat-container {
+        max-width: 660px;
+        margin: 0 auto; /* Center the chat container horizontally */
+        padding: 10px;
+        border: 1px solid rgba(106, 2, 142);
+        top: 100px;
+        left: 0;
+        right: 0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(216, 15, 226, 0.473);
+        background-color: #f9f9f9;
+      }
+
+      /* Style for the chat box */
+      .chat-box {
+        height: 420px;
+        overflow-y: auto;
+        border: 1px solid #eee;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+
+      /* Style for user input */
+      .user-input {
+        border-radius: 10px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      #user-marks,
+      #user-courses {
+        margin: 5px 0; /* Add margin to the input fields */
+        padding: 5px;
+        border: 1px solid rgba(106, 2, 142);
+        border-radius: 3px;
+      }
+
+      #send-button {
+        background-color: rgba(106, 2, 142);
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .user-message {
+        background-color: #f9f9f9;
+        border: 1px solid rgba(106, 2, 142);
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+
+      .bot-message {
+        background-color: rgba(198, 112, 227, 0.586);
+        border: 1px solid #c5e7c6;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 5px 0;
+      }
+
+      /* Style for college information */
+      .college-info {
+        display: flex;
+        align-items: center;
+      }
+
+      .college-image img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+
+      .college-name {
+        font-weight: bold;
+      }
+
+      .college-courses {
+        font-style: italic;
+        color: #555;
+      }
+
+      /* Style for college information */
+      .college-info {
+        display: flex;
+        flex-direction: column; /* Display college name and courses vertically */
+        align-items: center;
+      }
+
+      .college-image img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-bottom: 10px; /* Add space between image and college name */
+      }
+
+      .college-name {
+        font-weight: bold;
+        text-align: center; /* Center-align the college name */
+      }
+
+      .college-courses {
+        font-style: italic;
+        color: #555;
+        text-align: center; /* Center-align the college courses */
+      }
+
+      .college-courses-heading {
+        font-weight: bold;
+        text-align: center; /* Center-align the college courses heading */
+      }
+      .center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; Adjust if necessary */
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img
+              class="logoimg"
+              src="../static/WelcomePage/img/logo.png"
+              alt="Your Logo"
+            />
+          </a>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <h2>
+                  Please enter your 12th percentage and your interested course
+                  to predict the colleges
+                </h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- <div class="container"> -->
+
+    <!-- <div class="chat-container">
+      <div class="chat-box" id="chat-box"> -->
+        <!-- Chat messages will be displayed here -->
+      <!-- </div> -->
+      <!-- Add an input field for courses -->
+      <!-- <div class="user-input"> -->
+        <!-- <input
+          type="text"
+          id="user-marks"
+          placeholder="Enter your 12th percentage..."
+        />
+        <input
+          type="text"
+          id="user-courses"
+          placeholder="Enter your interested courses..."
+        />
+        <button class="main-btn" id="send-button">Send</button>
+      </div>
+    </div> -->
+    <!-- </div> -->
+    <div class="center-wrapper">
+      <iframe
+      src="https://www.chatbase.co/chatbot-iframe/-_MGonaXXnprSy0FDrfU_"
+      width="100%"
+      style="height: 610px; width: 550px; border: 1px solid #ccc; border-radius: 5px;"
+      frameborder="0"
+  ></iframe>
+    </div>
+
+    <script>
+      document
+        .getElementById("send-button")
+        .addEventListener("click", function () {
+          sendMessage();
+        });
+
+      document
+        .getElementById("user-message")
+        .addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            sendMessage();
+          }
+        });
+
+      function sendMessage() {
+        var userMarks = document.getElementById("user-marks").value;
+        var userCourses = document.getElementById("user-courses").value;
+
+        if (userMarks.trim() === "" || userCourses.trim() === "") {
+          return;
+        }
+
+        appendUserMessage("Marks: " + userMarks + ", Courses: " + userCourses);
+        document.getElementById("user-marks").value = "";
+        document.getElementById("user-courses").value = "";
+
+        // Send userMarks and userCourses to the server and get the response
+        fetch("/ask", {
+          method: "POST",
+          body: new URLSearchParams({
+            user_marks: userMarks,
+            user_courses: userCourses,
+          }),
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            appendBotMessage(data.bot_response);
+          });
+      }
+
+      function appendUserMessage(message) {
+        var chatBox = document.getElementById("chat-box");
+        var userMessageDiv = document.createElement("div");
+        userMessageDiv.className = "user-message";
+        userMessageDiv.innerHTML = message;
+        chatBox.appendChild(userMessageDiv);
+      }
+
+      function appendBotMessage(colleges) {
+        var chatBox = document.getElementById("chat-box");
+        var botMessageDiv = document.createElement("div");
+        botMessageDiv.className = "bot-message";
+
+        if (colleges.length > 0) {
+          botMessageDiv.innerHTML =
+            "Based on your marks, here are some recommended colleges:";
+
+          // Loop through college data and add images, names, and courses
+          colleges.forEach(function (college) {
+            var collegeInfo = document.createElement("div");
+            collegeInfo.className = "college-info";
+            collegeInfo.innerHTML = `
+                <div class="college-image">
+                    <img src="${college.ImageURL}" alt="${college.CollegeName}" />
+                </div>
+                <div class="college-name">
+                    <a href="${college.Website}" target="_blank">${college.CollegeName}</a>
+                </div>
+                <div class="college-courses-heading">College Courses</div>
+                <div class="college-courses">${college.Courses}</div>
+            `;
+            botMessageDiv.appendChild(collegeInfo);
+          });
+        } else {
+          botMessageDiv.innerHTML = "No colleges found for the given marks.";
+        }
+
+        chatBox.appendChild(botMessageDiv);
+      }
+    </script>
+  </body>
+</html>
