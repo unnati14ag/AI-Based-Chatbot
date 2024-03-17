@@ -8,8 +8,9 @@ SecureCloud Solutions presents a robust cloud security management project aimed 
 
 - **Project Type:** Web Application (AI-Based-Chatbot)
 - **Development Environment:** Visual Studio Code
-- **Programming Languages:** Python, Flask, HTML, CSS, JavaScript
-- **Database:** 
+- **Framework:** Flask
+- **Database:** SQLAlchemy (with SQLite for development purposes)
+- **Frontend:** HTML, CSS, JavaScript
 - **Cloud Provider:** Amazon Web Services (AWS)
 
 ## 🌟 Key AWS Services Utilized
